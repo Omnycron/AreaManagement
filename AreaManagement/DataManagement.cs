@@ -57,6 +57,10 @@ namespace AreaManagement
             dtRooms.Columns.Add(cTotalRent);
             dtRooms.Columns.Add(cInventoryCount);
 
+            //hides the id column
+            dtRooms.Columns[0].ColumnMapping = MappingType.Hidden;
+
+
             double sumRent = 0;
             double sumInventoryItemCount = 0;
             foreach(Room room in Program.building.GetRooms())
