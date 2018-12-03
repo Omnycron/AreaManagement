@@ -3,11 +3,12 @@ using System.Collections.Generic;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
+using System.Windows.Forms;
 
 namespace AreaManagement
 {
     [Serializable]
-    class Room
+    public class Room
     {
         private int id;
         private string name;
@@ -26,6 +27,11 @@ namespace AreaManagement
             area = rArea;
             rent = rRent;
             inventory = new List<InventoryItem>();
+        }
+
+        public double GetArea()
+        {
+            return area;
         }
 
         public double CalculateTotalRent()
@@ -60,7 +66,7 @@ namespace AreaManagement
             
         }
 
-        public object GetId()
+        public int GetId()
         {
             return id;
         }
@@ -75,7 +81,7 @@ namespace AreaManagement
                     maxId = room.id;
                 }
             }
-            return id+1;
+            return maxId + 1;
         }
     }
 }

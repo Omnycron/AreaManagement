@@ -41,8 +41,8 @@ namespace AreaManagement
             this.createTenant = new System.Windows.Forms.Button();
             this.tabPage4 = new System.Windows.Forms.TabPage();
             this.createRoom = new System.Windows.Forms.Button();
-            this.button2 = new System.Windows.Forms.Button();
             this.tabPage5 = new System.Windows.Forms.TabPage();
+            this.button2 = new System.Windows.Forms.Button();
             this.flowLayoutPanel1.SuspendLayout();
             this.tabControl1.SuspendLayout();
             this.tabPage1.SuspendLayout();
@@ -57,29 +57,32 @@ namespace AreaManagement
             // 
             this.flowLayoutPanel1.Controls.Add(this.tabControl1);
             this.flowLayoutPanel1.Controls.Add(this.button2);
-            this.flowLayoutPanel1.Location = new System.Drawing.Point(13, 13);
+            this.flowLayoutPanel1.Location = new System.Drawing.Point(6, 7);
+            this.flowLayoutPanel1.Margin = new System.Windows.Forms.Padding(2);
             this.flowLayoutPanel1.Name = "flowLayoutPanel1";
-            this.flowLayoutPanel1.Size = new System.Drawing.Size(1549, 804);
+            this.flowLayoutPanel1.Size = new System.Drawing.Size(774, 418);
             this.flowLayoutPanel1.TabIndex = 0;
             // 
             // tabControl1
             // 
             this.tabControl1.Controls.Add(this.tabPage1);
             this.tabControl1.Controls.Add(this.tabPage2);
-            this.tabControl1.Location = new System.Drawing.Point(3, 3);
+            this.tabControl1.Location = new System.Drawing.Point(2, 2);
+            this.tabControl1.Margin = new System.Windows.Forms.Padding(2);
             this.tabControl1.Name = "tabControl1";
             this.tabControl1.SelectedIndex = 0;
-            this.tabControl1.Size = new System.Drawing.Size(1546, 801);
+            this.tabControl1.Size = new System.Drawing.Size(773, 417);
             this.tabControl1.TabIndex = 5;
             // 
             // tabPage1
             // 
             this.tabPage1.Controls.Add(this.roomsDataGridView);
             this.tabPage1.Controls.Add(this.saveButton);
-            this.tabPage1.Location = new System.Drawing.Point(8, 39);
+            this.tabPage1.Location = new System.Drawing.Point(4, 22);
+            this.tabPage1.Margin = new System.Windows.Forms.Padding(2);
             this.tabPage1.Name = "tabPage1";
-            this.tabPage1.Padding = new System.Windows.Forms.Padding(3);
-            this.tabPage1.Size = new System.Drawing.Size(1530, 754);
+            this.tabPage1.Padding = new System.Windows.Forms.Padding(2);
+            this.tabPage1.Size = new System.Drawing.Size(765, 391);
             this.tabPage1.TabIndex = 0;
             this.tabPage1.Text = "Mieter";
             this.tabPage1.UseVisualStyleBackColor = true;
@@ -89,19 +92,21 @@ namespace AreaManagement
             this.roomsDataGridView.AllowUserToAddRows = false;
             this.roomsDataGridView.AutoSizeColumnsMode = System.Windows.Forms.DataGridViewAutoSizeColumnsMode.Fill;
             this.roomsDataGridView.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
-            this.roomsDataGridView.Location = new System.Drawing.Point(6, 52);
+            this.roomsDataGridView.Location = new System.Drawing.Point(3, 27);
+            this.roomsDataGridView.Margin = new System.Windows.Forms.Padding(2);
             this.roomsDataGridView.Name = "roomsDataGridView";
             this.roomsDataGridView.RowHeadersVisible = false;
             this.roomsDataGridView.RowTemplate.Height = 33;
-            this.roomsDataGridView.Size = new System.Drawing.Size(1524, 699);
+            this.roomsDataGridView.Size = new System.Drawing.Size(762, 363);
             this.roomsDataGridView.TabIndex = 0;
-            this.roomsDataGridView.CellContentClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.roomsDataGridView_CellContentClick);
+            this.roomsDataGridView.CellContentDoubleClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.RoomsDataGridView_CellContentClick);
             // 
             // saveButton
             // 
-            this.saveButton.Location = new System.Drawing.Point(6, 6);
+            this.saveButton.Location = new System.Drawing.Point(3, 3);
+            this.saveButton.Margin = new System.Windows.Forms.Padding(2);
             this.saveButton.Name = "saveButton";
-            this.saveButton.Size = new System.Drawing.Size(126, 40);
+            this.saveButton.Size = new System.Drawing.Size(63, 21);
             this.saveButton.TabIndex = 1;
             this.saveButton.Text = "Speichern";
             this.saveButton.UseVisualStyleBackColor = true;
@@ -110,10 +115,11 @@ namespace AreaManagement
             // tabPage2
             // 
             this.tabPage2.Controls.Add(this.tabControl2);
-            this.tabPage2.Location = new System.Drawing.Point(8, 39);
+            this.tabPage2.Location = new System.Drawing.Point(4, 22);
+            this.tabPage2.Margin = new System.Windows.Forms.Padding(2);
             this.tabPage2.Name = "tabPage2";
-            this.tabPage2.Padding = new System.Windows.Forms.Padding(3);
-            this.tabPage2.Size = new System.Drawing.Size(1530, 754);
+            this.tabPage2.Padding = new System.Windows.Forms.Padding(2);
+            this.tabPage2.Size = new System.Drawing.Size(765, 391);
             this.tabPage2.TabIndex = 1;
             this.tabPage2.Text = "Administrator";
             this.tabPage2.UseVisualStyleBackColor = true;
@@ -123,28 +129,31 @@ namespace AreaManagement
             this.tabControl2.Controls.Add(this.tabPage3);
             this.tabControl2.Controls.Add(this.tabPage4);
             this.tabControl2.Controls.Add(this.tabPage5);
-            this.tabControl2.Location = new System.Drawing.Point(6, 6);
+            this.tabControl2.Location = new System.Drawing.Point(3, 3);
+            this.tabControl2.Margin = new System.Windows.Forms.Padding(2);
             this.tabControl2.Name = "tabControl2";
             this.tabControl2.SelectedIndex = 0;
-            this.tabControl2.Size = new System.Drawing.Size(1518, 742);
+            this.tabControl2.Size = new System.Drawing.Size(759, 386);
             this.tabControl2.TabIndex = 6;
             // 
             // tabPage3
             // 
             this.tabPage3.Controls.Add(this.createTenant);
-            this.tabPage3.Location = new System.Drawing.Point(8, 39);
+            this.tabPage3.Location = new System.Drawing.Point(4, 22);
+            this.tabPage3.Margin = new System.Windows.Forms.Padding(2);
             this.tabPage3.Name = "tabPage3";
-            this.tabPage3.Padding = new System.Windows.Forms.Padding(3);
-            this.tabPage3.Size = new System.Drawing.Size(1502, 695);
+            this.tabPage3.Padding = new System.Windows.Forms.Padding(2);
+            this.tabPage3.Size = new System.Drawing.Size(751, 360);
             this.tabPage3.TabIndex = 0;
             this.tabPage3.Text = "Mieter";
             this.tabPage3.UseVisualStyleBackColor = true;
             // 
             // createTenant
             // 
-            this.createTenant.Location = new System.Drawing.Point(34, 13);
+            this.createTenant.Location = new System.Drawing.Point(17, 7);
+            this.createTenant.Margin = new System.Windows.Forms.Padding(2);
             this.createTenant.Name = "createTenant";
-            this.createTenant.Size = new System.Drawing.Size(184, 40);
+            this.createTenant.Size = new System.Drawing.Size(92, 21);
             this.createTenant.TabIndex = 5;
             this.createTenant.Text = "Mieter anlegen";
             this.createTenant.UseVisualStyleBackColor = true;
@@ -153,48 +162,54 @@ namespace AreaManagement
             // tabPage4
             // 
             this.tabPage4.Controls.Add(this.createRoom);
-            this.tabPage4.Location = new System.Drawing.Point(8, 39);
+            this.tabPage4.Location = new System.Drawing.Point(4, 22);
+            this.tabPage4.Margin = new System.Windows.Forms.Padding(2);
             this.tabPage4.Name = "tabPage4";
-            this.tabPage4.Padding = new System.Windows.Forms.Padding(3);
-            this.tabPage4.Size = new System.Drawing.Size(1502, 695);
+            this.tabPage4.Padding = new System.Windows.Forms.Padding(2);
+            this.tabPage4.Size = new System.Drawing.Size(751, 360);
             this.tabPage4.TabIndex = 1;
             this.tabPage4.Text = "Räume";
             this.tabPage4.UseVisualStyleBackColor = true;
             // 
             // createRoom
             // 
-            this.createRoom.Location = new System.Drawing.Point(110, 81);
+            this.createRoom.Location = new System.Drawing.Point(55, 42);
+            this.createRoom.Margin = new System.Windows.Forms.Padding(2);
             this.createRoom.Name = "createRoom";
-            this.createRoom.Size = new System.Drawing.Size(192, 40);
+            this.createRoom.Size = new System.Drawing.Size(96, 21);
             this.createRoom.TabIndex = 4;
             this.createRoom.Text = "Raum anlegen";
             this.createRoom.UseVisualStyleBackColor = true;
-            // 
-            // button2
-            // 
-            this.button2.Location = new System.Drawing.Point(3, 810);
-            this.button2.Name = "button2";
-            this.button2.Size = new System.Drawing.Size(324, 8);
-            this.button2.TabIndex = 3;
-            this.button2.Text = "button2";
-            this.button2.UseVisualStyleBackColor = true;
+            this.createRoom.Click += new System.EventHandler(this.CreateRoom_Click);
             // 
             // tabPage5
             // 
-            this.tabPage5.Location = new System.Drawing.Point(8, 39);
-            this.tabPage5.Name = "adminInventoryItems";
-            this.tabPage5.Padding = new System.Windows.Forms.Padding(3);
-            this.tabPage5.Size = new System.Drawing.Size(1502, 695);
+            this.tabPage5.Location = new System.Drawing.Point(4, 22);
+            this.tabPage5.Margin = new System.Windows.Forms.Padding(2);
+            this.tabPage5.Name = "tabPage5";
+            this.tabPage5.Padding = new System.Windows.Forms.Padding(2);
+            this.tabPage5.Size = new System.Drawing.Size(751, 360);
             this.tabPage5.TabIndex = 2;
             this.tabPage5.Text = "Einrichtung";
             this.tabPage5.UseVisualStyleBackColor = true;
             // 
+            // button2
+            // 
+            this.button2.Location = new System.Drawing.Point(2, 423);
+            this.button2.Margin = new System.Windows.Forms.Padding(2);
+            this.button2.Name = "button2";
+            this.button2.Size = new System.Drawing.Size(162, 4);
+            this.button2.TabIndex = 3;
+            this.button2.Text = "button2";
+            this.button2.UseVisualStyleBackColor = true;
+            // 
             // NavigationForm
             // 
-            this.AutoScaleDimensions = new System.Drawing.SizeF(12F, 25F);
+            this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(1574, 829);
+            this.ClientSize = new System.Drawing.Size(787, 431);
             this.Controls.Add(this.flowLayoutPanel1);
+            this.Margin = new System.Windows.Forms.Padding(2);
             this.Name = "NavigationForm";
             this.Text = "Flächenverwaltung";
             this.Load += new System.EventHandler(this.Form1_Load);

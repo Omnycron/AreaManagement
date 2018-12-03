@@ -51,9 +51,29 @@ namespace AreaManagement
 
         }
 
-        private void roomsDataGridView_CellContentClick(object sender, DataGridViewCellEventArgs e)
+        private void RoomsDataGridView_CellContentClick(object sender, DataGridViewCellEventArgs e)
         {
+            try
+            {
+                DataGridView dgv = sender as DataGridView;
+                if (dgv == null)
+                {
+                    return;
+                }
 
+                int roomId = Convert.ToInt32(dgv.Rows[e.RowIndex].Cells[0].Value);
+                Room room = Program.dataManagement.GetRoom(roomId);
+                if (room!=null)
+                {
+                    EditRoom er = new EditRoom(room);
+                    er.ShowDialog();
+                }
+                
+            }
+            catch (Exception exc)
+            {
+
+            }
         }
     }
 }

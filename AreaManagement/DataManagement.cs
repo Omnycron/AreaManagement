@@ -47,18 +47,30 @@ namespace AreaManagement
         {
             DataTable dtRooms = new DataTable();
 
-            DataColumn cId = new DataColumn("Id");
-            DataColumn cName = new DataColumn("Name");
-            DataColumn cTotalRent = new DataColumn("Miete");
-            DataColumn cInventoryCount = new DataColumn("gemietete Objekte");
+            DataColumn cId = new DataColumn("Id")
+            {
+                ReadOnly = true
+            };
+
+            DataColumn cName = new DataColumn("Name")
+            {
+                ReadOnly = true
+            };
+
+            DataColumn cTotalRent = new DataColumn("Miete")
+            {
+                ReadOnly = true
+            };
+
+            DataColumn cInventoryCount = new DataColumn("gemietete Objekte")
+            {
+                ReadOnly = true
+            };
 
             dtRooms.Columns.Add(cId);
             dtRooms.Columns.Add(cName);
             dtRooms.Columns.Add(cTotalRent);
             dtRooms.Columns.Add(cInventoryCount);
-
-            //hides the id column
-            dtRooms.Columns[0].ColumnMapping = MappingType.Hidden;
 
 
             double sumRent = 0;
@@ -86,6 +98,31 @@ namespace AreaManagement
             dtRooms.Rows.Add(sumRow);
 
             return dtRooms;
+        }
+
+        public Room GetRoom(int id)
+        {
+            Room room = null;
+            foreach (Room r in Program.building.GetRooms())
+            {
+                if (id == r.GetId())
+                {
+                    room = r;
+                }
+            }
+            return room;
+        }
+
+        public void SaveRoom(Room r)
+        {
+            for (int i = 0; i<Program.building.GetRooms().Count; i++)
+            {
+                if (r.GetId() == Program.building.GetRooms()[i].GetId())
+                {
+                    Program.building.GetRooms()[i] = r;
+                }
+            }
+            return;
         }
     }
 }

@@ -69,6 +69,12 @@
       <DependentUpon>CreateTenant.cs</DependentUpon>
     </Compile>
     <Compile Include="DataManagement.cs" />
+    <Compile Include="EditRoom.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="EditRoom.Designer.cs">
+      <DependentUpon>EditRoom.cs</DependentUpon>
+    </Compile>
     <Compile Include="NavigationFom.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -92,6 +98,9 @@
     </EmbeddedResource>
     <EmbeddedResource Include="CreateTenant.resx">
       <DependentUpon>CreateTenant.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="EditRoom.resx">
+      <DependentUpon>EditRoom.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="NavigationFom.resx">
       <DependentUpon>NavigationFom.cs</DependentUpon>

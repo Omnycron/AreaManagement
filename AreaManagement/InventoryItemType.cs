@@ -7,7 +7,7 @@ using System.Threading.Tasks;
 namespace AreaManagement
 {
     [Serializable]
-    class InventoryItemType
+    public class InventoryItemType
     {
         private string name;
         private int id;
