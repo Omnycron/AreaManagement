@@ -29,7 +29,7 @@
         private void InitializeComponent()
         {
             this.tableLayoutPanel1 = new System.Windows.Forms.TableLayoutPanel();
-            this.textBox7 = new System.Windows.Forms.TextBox();
+            this.roomType = new System.Windows.Forms.TextBox();
             this.roomSize = new System.Windows.Forms.TextBox();
             this.label3 = new System.Windows.Forms.Label();
             this.roomTenant = new System.Windows.Forms.TextBox();
@@ -40,16 +40,16 @@
             this.label5 = new System.Windows.Forms.Label();
             this.label6 = new System.Windows.Forms.Label();
             this.label7 = new System.Windows.Forms.Label();
-            this.textBox4 = new System.Windows.Forms.TextBox();
-            this.textBox5 = new System.Windows.Forms.TextBox();
-            this.textBox6 = new System.Windows.Forms.TextBox();
+            this.roomNumberSeatingPositions = new System.Windows.Forms.TextBox();
+            this.roomNumberWorkingPlaces = new System.Windows.Forms.TextBox();
+            this.roomTypeOfUse = new System.Windows.Forms.TextBox();
             this.createInventoryItemButton = new System.Windows.Forms.Button();
-            this.dataGridView1 = new System.Windows.Forms.DataGridView();
+            this.inventoryItemsDataGridView = new System.Windows.Forms.DataGridView();
             this.flowLayoutPanel1 = new System.Windows.Forms.FlowLayoutPanel();
             this.cancelButton = new System.Windows.Forms.Button();
             this.saveButton = new System.Windows.Forms.Button();
             this.tableLayoutPanel1.SuspendLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.dataGridView1)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.inventoryItemsDataGridView)).BeginInit();
             this.flowLayoutPanel1.SuspendLayout();
             this.SuspendLayout();
             // 
@@ -64,7 +64,7 @@
             this.tableLayoutPanel1.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle());
             this.tableLayoutPanel1.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Absolute, 125F));
             this.tableLayoutPanel1.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle());
-            this.tableLayoutPanel1.Controls.Add(this.textBox7, 0, 1);
+            this.tableLayoutPanel1.Controls.Add(this.roomType, 0, 1);
             this.tableLayoutPanel1.Controls.Add(this.roomSize, 5, 0);
             this.tableLayoutPanel1.Controls.Add(this.label3, 4, 0);
             this.tableLayoutPanel1.Controls.Add(this.roomTenant, 3, 0);
@@ -75,9 +75,9 @@
             this.tableLayoutPanel1.Controls.Add(this.label5, 2, 1);
             this.tableLayoutPanel1.Controls.Add(this.label6, 4, 1);
             this.tableLayoutPanel1.Controls.Add(this.label7, 6, 1);
-            this.tableLayoutPanel1.Controls.Add(this.textBox4, 7, 1);
-            this.tableLayoutPanel1.Controls.Add(this.textBox5, 5, 1);
-            this.tableLayoutPanel1.Controls.Add(this.textBox6, 3, 1);
+            this.tableLayoutPanel1.Controls.Add(this.roomNumberSeatingPositions, 7, 1);
+            this.tableLayoutPanel1.Controls.Add(this.roomNumberWorkingPlaces, 5, 1);
+            this.tableLayoutPanel1.Controls.Add(this.roomTypeOfUse, 3, 1);
             this.tableLayoutPanel1.Controls.Add(this.createInventoryItemButton, 7, 2);
             this.tableLayoutPanel1.Location = new System.Drawing.Point(13, 13);
             this.tableLayoutPanel1.Name = "tableLayoutPanel1";
@@ -88,12 +88,12 @@
             this.tableLayoutPanel1.Size = new System.Drawing.Size(775, 80);
             this.tableLayoutPanel1.TabIndex = 0;
             // 
-            // textBox7
+            // roomType
             // 
-            this.textBox7.Location = new System.Drawing.Point(78, 29);
-            this.textBox7.Name = "textBox7";
-            this.textBox7.Size = new System.Drawing.Size(75, 20);
-            this.textBox7.TabIndex = 14;
+            this.roomType.Location = new System.Drawing.Point(78, 29);
+            this.roomType.Name = "roomType";
+            this.roomType.Size = new System.Drawing.Size(75, 20);
+            this.roomType.TabIndex = 14;
             // 
             // roomSize
             // 
@@ -169,9 +169,9 @@
             this.label6.AutoSize = true;
             this.label6.Location = new System.Drawing.Point(315, 26);
             this.label6.Name = "label6";
-            this.label6.Size = new System.Drawing.Size(105, 13);
+            this.label6.Size = new System.Drawing.Size(90, 13);
             this.label6.TabIndex = 9;
-            this.label6.Text = "Anzahl Arbeitsplätze:";
+            this.label6.Text = "Anzahl Sitzplätze:";
             // 
             // label7
             // 
@@ -182,26 +182,26 @@
             this.label7.TabIndex = 10;
             this.label7.Text = "Anzahl Arbeitsplätze:";
             // 
-            // textBox4
+            // roomNumberSeatingPositions
             // 
-            this.textBox4.Location = new System.Drawing.Point(646, 29);
-            this.textBox4.Name = "textBox4";
-            this.textBox4.Size = new System.Drawing.Size(129, 20);
-            this.textBox4.TabIndex = 11;
+            this.roomNumberSeatingPositions.Location = new System.Drawing.Point(646, 29);
+            this.roomNumberSeatingPositions.Name = "roomNumberSeatingPositions";
+            this.roomNumberSeatingPositions.Size = new System.Drawing.Size(129, 20);
+            this.roomNumberSeatingPositions.TabIndex = 11;
             // 
-            // textBox5
+            // roomNumberWorkingPlaces
             // 
-            this.textBox5.Location = new System.Drawing.Point(440, 29);
-            this.textBox5.Name = "textBox5";
-            this.textBox5.Size = new System.Drawing.Size(75, 20);
-            this.textBox5.TabIndex = 12;
+            this.roomNumberWorkingPlaces.Location = new System.Drawing.Point(440, 29);
+            this.roomNumberWorkingPlaces.Name = "roomNumberWorkingPlaces";
+            this.roomNumberWorkingPlaces.Size = new System.Drawing.Size(75, 20);
+            this.roomNumberWorkingPlaces.TabIndex = 12;
             // 
-            // textBox6
+            // roomTypeOfUse
             // 
-            this.textBox6.Location = new System.Drawing.Point(234, 29);
-            this.textBox6.Name = "textBox6";
-            this.textBox6.Size = new System.Drawing.Size(75, 20);
-            this.textBox6.TabIndex = 13;
+            this.roomTypeOfUse.Location = new System.Drawing.Point(234, 29);
+            this.roomTypeOfUse.Name = "roomTypeOfUse";
+            this.roomTypeOfUse.Size = new System.Drawing.Size(75, 20);
+            this.roomTypeOfUse.TabIndex = 13;
             // 
             // createInventoryItemButton
             // 
@@ -213,13 +213,13 @@
             this.createInventoryItemButton.UseVisualStyleBackColor = true;
             this.createInventoryItemButton.Click += new System.EventHandler(this.CreateInventoryItemButton_Click);
             // 
-            // dataGridView1
+            // inventoryItemsDataGridView
             // 
-            this.dataGridView1.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
-            this.dataGridView1.Location = new System.Drawing.Point(13, 100);
-            this.dataGridView1.Name = "dataGridView1";
-            this.dataGridView1.Size = new System.Drawing.Size(775, 319);
-            this.dataGridView1.TabIndex = 1;
+            this.inventoryItemsDataGridView.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
+            this.inventoryItemsDataGridView.Location = new System.Drawing.Point(13, 100);
+            this.inventoryItemsDataGridView.Name = "inventoryItemsDataGridView";
+            this.inventoryItemsDataGridView.Size = new System.Drawing.Size(775, 319);
+            this.inventoryItemsDataGridView.TabIndex = 1;
             // 
             // flowLayoutPanel1
             // 
@@ -239,6 +239,7 @@
             this.cancelButton.TabIndex = 0;
             this.cancelButton.Text = "Abbrechen";
             this.cancelButton.UseVisualStyleBackColor = true;
+            this.cancelButton.Click += new System.EventHandler(this.CancelButton_Click);
             // 
             // saveButton
             // 
@@ -256,13 +257,14 @@
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(800, 450);
             this.Controls.Add(this.flowLayoutPanel1);
-            this.Controls.Add(this.dataGridView1);
+            this.Controls.Add(this.inventoryItemsDataGridView);
             this.Controls.Add(this.tableLayoutPanel1);
             this.Name = "EditRoom";
             this.Text = "EditRoom";
+            this.Load += new System.EventHandler(this.EditRoom_Load);
             this.tableLayoutPanel1.ResumeLayout(false);
             this.tableLayoutPanel1.PerformLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.dataGridView1)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.inventoryItemsDataGridView)).EndInit();
             this.flowLayoutPanel1.ResumeLayout(false);
             this.ResumeLayout(false);
 
@@ -281,12 +283,12 @@
         private System.Windows.Forms.Label label5;
         private System.Windows.Forms.Label label6;
         private System.Windows.Forms.Label label7;
-        private System.Windows.Forms.TextBox textBox7;
-        private System.Windows.Forms.TextBox textBox4;
-        private System.Windows.Forms.TextBox textBox5;
-        private System.Windows.Forms.TextBox textBox6;
+        private System.Windows.Forms.TextBox roomType;
+        private System.Windows.Forms.TextBox roomNumberSeatingPositions;
+        private System.Windows.Forms.TextBox roomNumberWorkingPlaces;
+        private System.Windows.Forms.TextBox roomTypeOfUse;
         private System.Windows.Forms.Button createInventoryItemButton;
-        private System.Windows.Forms.DataGridView dataGridView1;
+        private System.Windows.Forms.DataGridView inventoryItemsDataGridView;
         private System.Windows.Forms.FlowLayoutPanel flowLayoutPanel1;
         private System.Windows.Forms.Button cancelButton;
         private System.Windows.Forms.Button saveButton;

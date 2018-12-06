@@ -7,25 +7,37 @@ using System.Threading.Tasks;
 namespace AreaManagement
 {
     [Serializable]
-    class InventoryItem
+    public class InventoryItem
     {
         private string name;
-        private InventoryItemType type;
-        private int id;
+        private int inventoryItemTypeId;
         private string status;//defekt, beschädigt, intakt
 
-        public InventoryItem(string itemName, InventoryItemType itemType, int itemId, string itemStatus)
+        public InventoryItem(string itemName, int itemType, string itemStatus)
         {
             name = itemName;
-            type = itemType;
-            id = itemId;
+            inventoryItemTypeId = itemType;
             status = itemStatus;
         }
 
         public double GetRent()
         {
-            return type.GetRent();
+            return Program.dataManagement.GetIventoryItemTypeById(this.inventoryItemTypeId).GetRent();
         }
 
+        public string GetName()
+        {
+            return this.name;
+        }
+
+        public int GetInventoryItemType()
+        {
+            return this.inventoryItemTypeId;
+        }
+
+        public string GetStatus()
+        {
+            return this.status;
+        }
     }
 }

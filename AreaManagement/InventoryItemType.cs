@@ -24,5 +24,12 @@ namespace AreaManagement
         {
             return rent;
         }
+
+        public string GetName()
+        {
+            return this.name;
+        }
+
+        public int GetId() => id;
     }
 }

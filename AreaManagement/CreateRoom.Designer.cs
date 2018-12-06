@@ -54,7 +54,7 @@
             this.tableLayoutPanel1.Controls.Add(this.nameTextBox, 1, 0);
             this.tableLayoutPanel1.Controls.Add(this.rentTextBox, 1, 2);
             this.tableLayoutPanel1.Location = new System.Drawing.Point(6, 6);
-            this.tableLayoutPanel1.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.tableLayoutPanel1.Margin = new System.Windows.Forms.Padding(2);
             this.tableLayoutPanel1.Name = "tableLayoutPanel1";
             this.tableLayoutPanel1.RowCount = 3;
             this.tableLayoutPanel1.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 50.63291F));
@@ -76,7 +76,7 @@
             // areaTextBox
             // 
             this.areaTextBox.Location = new System.Drawing.Point(72, 24);
-            this.areaTextBox.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.areaTextBox.Margin = new System.Windows.Forms.Padding(2);
             this.areaTextBox.Name = "areaTextBox";
             this.areaTextBox.Size = new System.Drawing.Size(297, 20);
             this.areaTextBox.TabIndex = 3;
@@ -104,7 +104,7 @@
             // nameTextBox
             // 
             this.nameTextBox.Location = new System.Drawing.Point(72, 2);
-            this.nameTextBox.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.nameTextBox.Margin = new System.Windows.Forms.Padding(2);
             this.nameTextBox.Name = "nameTextBox";
             this.nameTextBox.Size = new System.Drawing.Size(297, 20);
             this.nameTextBox.TabIndex = 2;
@@ -112,7 +112,7 @@
             // rentTextBox
             // 
             this.rentTextBox.Location = new System.Drawing.Point(72, 45);
-            this.rentTextBox.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.rentTextBox.Margin = new System.Windows.Forms.Padding(2);
             this.rentTextBox.Name = "rentTextBox";
             this.rentTextBox.Size = new System.Drawing.Size(297, 20);
             this.rentTextBox.TabIndex = 5;
@@ -123,7 +123,7 @@
             this.flowLayoutPanel1.Controls.Add(this.button1);
             this.flowLayoutPanel1.FlowDirection = System.Windows.Forms.FlowDirection.RightToLeft;
             this.flowLayoutPanel1.Location = new System.Drawing.Point(6, 77);
-            this.flowLayoutPanel1.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.flowLayoutPanel1.Margin = new System.Windows.Forms.Padding(2);
             this.flowLayoutPanel1.Name = "flowLayoutPanel1";
             this.flowLayoutPanel1.Size = new System.Drawing.Size(368, 23);
             this.flowLayoutPanel1.TabIndex = 1;
@@ -131,7 +131,7 @@
             // button2
             // 
             this.button2.Location = new System.Drawing.Point(301, 2);
-            this.button2.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.button2.Margin = new System.Windows.Forms.Padding(2);
             this.button2.Name = "button2";
             this.button2.Size = new System.Drawing.Size(65, 22);
             this.button2.TabIndex = 1;
@@ -142,7 +142,7 @@
             // button1
             // 
             this.button1.Location = new System.Drawing.Point(232, 2);
-            this.button1.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.button1.Margin = new System.Windows.Forms.Padding(2);
             this.button1.Name = "button1";
             this.button1.Size = new System.Drawing.Size(65, 22);
             this.button1.TabIndex = 0;
@@ -157,7 +157,7 @@
             this.ClientSize = new System.Drawing.Size(380, 103);
             this.Controls.Add(this.flowLayoutPanel1);
             this.Controls.Add(this.tableLayoutPanel1);
-            this.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.Margin = new System.Windows.Forms.Padding(2);
             this.Name = "CreateRoom";
             this.Text = "neuen Raum anlegen";
             this.tableLayoutPanel1.ResumeLayout(false);

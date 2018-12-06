@@ -11,6 +11,7 @@ namespace AreaManagement
     {
         private List<Room> rooms;
         private List<Tenant> tenants;
+        private List<InventoryItemType> inventoryItemTypes;
 
         public Building()
         {
@@ -21,6 +22,8 @@ namespace AreaManagement
         public List<Room> GetRooms() => rooms;
 
         public List<Tenant> GetTenants() => tenants;
+
+        public List<InventoryItemType> GetInventoryItemTypes() => inventoryItemTypes;
 
         public void AddRoom(string name, double area, double rent)
         {

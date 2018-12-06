@@ -13,6 +13,21 @@ namespace AreaManagement
         static readonly string inventoryItemPath = basicPath + "InventoryManagement" + extension;
         static readonly string roomPath = basicPath + "Room" + extension;
         static readonly string tenantPath = basicPath + "Tenant" + extension;
+
+        public InventoryItemType GetIventoryItemTypeById(int inventoryItemTypeId)
+        {
+            InventoryItemType result = null;
+            foreach(InventoryItemType iit in Program.building.GetInventoryItemTypes())
+            {
+                if (iit.GetId() == inventoryItemTypeId)
+                {
+                    result = iit;
+                    break;
+                }
+            }
+            return result;
+        }
+
         static readonly string buildingPath = basicPath + "Building" + extension;
 
         private void Save(string filepath, object obj)
@@ -123,6 +138,74 @@ namespace AreaManagement
                 }
             }
             return;
+        }
+
+        public DataTable GetInventoryItems(Room room)
+        {
+            DataTable inventoryItems = new DataTable();
+
+            DataColumn cName = new DataColumn("Name");
+            DataColumn cTyp = new DataColumn("Typ")
+            {
+                ReadOnly = true
+            };
+            DataColumn cTotalRent = new DataColumn("Status");
+            DataColumn cInventoryCount = new DataColumn("Miete (€)")
+            {
+                ReadOnly = true
+            };
+
+            inventoryItems.Columns.Add(cName);
+            inventoryItems.Columns.Add(cTyp);
+            inventoryItems.Columns.Add(cTotalRent);
+            inventoryItems.Columns.Add(cInventoryCount);
+
+
+            //double sumRent = 0;
+            //double sumInventoryItemCount = 0;
+            foreach (InventoryItem inventoryItem in room.GetInventory())
+            {
+                //sumRent += rent;
+                //sumInventoryItemCount += inventoryItemCount;
+
+                DataRow dr = inventoryItems.NewRow();
+                dr["Name"] = inventoryItem.GetName();
+                dr["Typ"] = GetIventoryItemTypeById(inventoryItem.GetInventoryItemType()).GetName();
+                dr["Status"] = inventoryItem.GetStatus();
+                dr["Miete (€)"] = inventoryItem.GetRent(); ;
+                inventoryItems.Rows.Add(dr);
+            }
+
+            //DataRow sumRow = dtRooms.NewRow();
+            //sumRow["Name"] = "Summe";
+            //sumRow["Typ"] = null;
+            //sumRow["Status"] = null;
+            //sumRow["Miete (€)"] = sumInventoryItemCount;
+            //dtRooms.Rows.Add(sumRow);
+
+            return inventoryItems;
+        }
+
+        public DataTable GetInventoryItemTypesDataTable()
+        {
+            DataTable result = new DataTable();
+
+            DataColumn cName = new DataColumn("Name");
+            DataColumn cId = new DataColumn("Id");
+           
+
+            result.Columns.Add(cName);
+            result.Columns.Add(cId);
+            
+            foreach (InventoryItemType itt in Program.building.GetInventoryItemTypes())
+            {
+                DataRow dr = result.NewRow();
+                dr["Name"] = itt.GetName();
+                dr["Id"] = itt.GetId();
+                result.Rows.Add(dr);
+            }
+
+            return result;
         }
     }
 }
