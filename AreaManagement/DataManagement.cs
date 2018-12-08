@@ -192,16 +192,19 @@ namespace AreaManagement
 
             DataColumn cName = new DataColumn("Name");
             DataColumn cId = new DataColumn("Id");
+            DataColumn cRent = new DataColumn("Miete (€)");
            
 
             result.Columns.Add(cName);
             result.Columns.Add(cId);
+            result.Columns.Add(cRent);
             
             foreach (InventoryItemType itt in Program.building.GetInventoryItemTypes())
             {
                 DataRow dr = result.NewRow();
                 dr["Name"] = itt.GetName();
                 dr["Id"] = itt.GetId();
+                dr["Miete (€)"] = itt.GetRent();
                 result.Rows.Add(dr);
             }
 

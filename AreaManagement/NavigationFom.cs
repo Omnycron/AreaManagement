@@ -34,6 +34,7 @@ namespace AreaManagement
         private void ReloadRooms()
         {
             this.roomsDataGridView.DataSource = Program.dataManagement.GetRooms();
+            this.roomsAdminDataGridView.DataSource = Program.dataManagement.GetRooms();
             //this.roomsDataGridView.AutoResizeColumns(); //funktioniert nicht mit AutoResizeMode.Fill
         }
 
@@ -74,6 +75,12 @@ namespace AreaManagement
             {
 
             }
+        }
+
+        private void createInventoryItemType_Click(object sender, EventArgs e)
+        {
+            CreateInventoryItemType citt = new CreateInventoryItemType();
+            citt.ShowDialog();
         }
     }
 }

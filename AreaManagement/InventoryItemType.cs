@@ -13,10 +13,10 @@ namespace AreaManagement
         private int id;
         private double rent;
 
-        public InventoryItemType(string itemName, int itemId, double itemRent)
+        public InventoryItemType(string itemName, double itemRent)
         {
             name = itemName;
-            id = itemId;
+            id = GetNextId();
             rent = itemRent;
         }
 
@@ -31,5 +31,22 @@ namespace AreaManagement
         }
 
         public int GetId() => id;
+
+        private int GetNextId()
+        {
+            int maxId = -1;
+            if(Program.building.GetInventoryItemTypes() == null)
+            {
+                return 0;
+            }
+            foreach (InventoryItemType itt in Program.building.GetInventoryItemTypes())
+            {
+                if (itt.GetId() > maxId)
+                {
+                    maxId = itt.id;
+                }
+            }
+            return maxId + 1;
+        }
     }
 }

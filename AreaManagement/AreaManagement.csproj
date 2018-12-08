@@ -68,6 +68,12 @@
     <Compile Include="CreateInventoryItem.Designer.cs">
       <DependentUpon>CreateInventoryItem.cs</DependentUpon>
     </Compile>
+    <Compile Include="CreateInventoryItemType.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="CreateInventoryItemType.Designer.cs">
+      <DependentUpon>CreateInventoryItemType.cs</DependentUpon>
+    </Compile>
     <Compile Include="CreateTenant.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -101,6 +107,9 @@
     <Compile Include="Tenant.cs" />
     <EmbeddedResource Include="CreateInventoryItem.resx">
       <DependentUpon>CreateInventoryItem.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="CreateInventoryItemType.resx">
+      <DependentUpon>CreateInventoryItemType.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="CreateRoom.resx">
       <DependentUpon>CreateRoom.cs</DependentUpon>

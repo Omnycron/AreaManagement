@@ -36,9 +36,15 @@ namespace AreaManagement
 
         private void FillComboBox()
         {
-            this.inventoryItemType.DataSource = Program.dataManagement.GetInventoryItemTypesDataTable();
-            this.inventoryItemType.DisplayMember = "Name";
+            this.inventoryItemType.DataSource = Program.dataManagement.GetInventoryItemTypesDataTable().DefaultView;
             this.inventoryItemType.ValueMember = "Id";
+            this.inventoryItemType.DisplayMember = "Name";
+            
+        }
+
+        private void cancelButton_Click(object sender, EventArgs e)
+        {
+            this.Close();
         }
     }
 }
