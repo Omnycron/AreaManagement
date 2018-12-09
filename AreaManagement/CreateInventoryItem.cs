@@ -22,14 +22,20 @@ namespace AreaManagement
 
         private void saveButton_Click(object sender, EventArgs e)
         {
-            InventoryItem inventoryItem = new InventoryItem(inventoryItemName.Text, Convert.ToInt32(inventoryItemType.ValueMember), "intakt");
-            for(int i = 0; i<Program.building.GetRooms().Count; i++)
+            string name = inventoryItemName.Text;
+            int type = Convert.ToInt32(inventoryItemType.SelectedValue);
+            room.AddInventoryItem(name, type);
+            List<Room> tempRooms = Program.building.GetRooms();
+            for (int i = 0; i<tempRooms.Count; i++)
             {
-                if (Program.building.GetRooms()[i].GetId() == room.GetId())
+                if (tempRooms[i].GetId() == room.GetId())
                 {
-                    Program.building.GetRooms()[i] = room;
+                    tempRooms[i] = room;
+                    Program.building.SetRooms(tempRooms);
                 }
             }
+            EditRoom er = (EditRoom)Application.OpenForms["EditRoom"];
+            er.ReloadInventoryTable();
             this.Close();
             return;
         }

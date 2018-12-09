@@ -32,8 +32,8 @@
             this.saveButton = new System.Windows.Forms.Button();
             this.tableLayoutPanel1 = new System.Windows.Forms.TableLayoutPanel();
             this.inventoryItemTypeRent = new System.Windows.Forms.Label();
-            this.inventoryItemTypeName = new System.Windows.Forms.Label();
-            this.inventoryItemName = new System.Windows.Forms.TextBox();
+            this.inventoryItemTypeNameLabel = new System.Windows.Forms.Label();
+            this.inventoryItemTypeNameTextbox = new System.Windows.Forms.TextBox();
             this.inventoryItemType = new System.Windows.Forms.ComboBox();
             this.flowLayoutPanel1 = new System.Windows.Forms.FlowLayoutPanel();
             this.tableLayoutPanel1.SuspendLayout();
@@ -43,7 +43,7 @@
             // cancelButton
             // 
             this.cancelButton.Location = new System.Drawing.Point(296, 2);
-            this.cancelButton.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.cancelButton.Margin = new System.Windows.Forms.Padding(2);
             this.cancelButton.Name = "cancelButton";
             this.cancelButton.Size = new System.Drawing.Size(70, 22);
             this.cancelButton.TabIndex = 1;
@@ -53,7 +53,7 @@
             // saveButton
             // 
             this.saveButton.Location = new System.Drawing.Point(222, 2);
-            this.saveButton.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.saveButton.Margin = new System.Windows.Forms.Padding(2);
             this.saveButton.Name = "saveButton";
             this.saveButton.Size = new System.Drawing.Size(70, 22);
             this.saveButton.TabIndex = 0;
@@ -67,11 +67,11 @@
             this.tableLayoutPanel1.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 19.0027F));
             this.tableLayoutPanel1.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 80.99731F));
             this.tableLayoutPanel1.Controls.Add(this.inventoryItemTypeRent, 0, 1);
-            this.tableLayoutPanel1.Controls.Add(this.inventoryItemTypeName, 0, 0);
-            this.tableLayoutPanel1.Controls.Add(this.inventoryItemName, 1, 0);
+            this.tableLayoutPanel1.Controls.Add(this.inventoryItemTypeNameLabel, 0, 0);
+            this.tableLayoutPanel1.Controls.Add(this.inventoryItemTypeNameTextbox, 1, 0);
             this.tableLayoutPanel1.Controls.Add(this.inventoryItemType, 1, 1);
             this.tableLayoutPanel1.Location = new System.Drawing.Point(6, 7);
-            this.tableLayoutPanel1.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.tableLayoutPanel1.Margin = new System.Windows.Forms.Padding(2);
             this.tableLayoutPanel1.Name = "tableLayoutPanel1";
             this.tableLayoutPanel1.RowCount = 2;
             this.tableLayoutPanel1.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 50.63291F));
@@ -89,23 +89,23 @@
             this.inventoryItemTypeRent.TabIndex = 1;
             this.inventoryItemTypeRent.Text = "Miete (€):";
             // 
-            // inventoryItemTypeName
+            // inventoryItemTypeNameLabel
             // 
-            this.inventoryItemTypeName.AutoSize = true;
-            this.inventoryItemTypeName.Location = new System.Drawing.Point(2, 0);
-            this.inventoryItemTypeName.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
-            this.inventoryItemTypeName.Name = "inventoryItemTypeName";
-            this.inventoryItemTypeName.Size = new System.Drawing.Size(38, 13);
-            this.inventoryItemTypeName.TabIndex = 0;
-            this.inventoryItemTypeName.Text = "Name:";
+            this.inventoryItemTypeNameLabel.AutoSize = true;
+            this.inventoryItemTypeNameLabel.Location = new System.Drawing.Point(2, 0);
+            this.inventoryItemTypeNameLabel.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
+            this.inventoryItemTypeNameLabel.Name = "inventoryItemTypeNameLabel";
+            this.inventoryItemTypeNameLabel.Size = new System.Drawing.Size(38, 13);
+            this.inventoryItemTypeNameLabel.TabIndex = 0;
+            this.inventoryItemTypeNameLabel.Text = "Name:";
             // 
-            // inventoryItemName
+            // inventoryItemTypeNameTextbox
             // 
-            this.inventoryItemName.Location = new System.Drawing.Point(72, 2);
-            this.inventoryItemName.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
-            this.inventoryItemName.Name = "inventoryItemName";
-            this.inventoryItemName.Size = new System.Drawing.Size(297, 20);
-            this.inventoryItemName.TabIndex = 2;
+            this.inventoryItemTypeNameTextbox.Location = new System.Drawing.Point(72, 2);
+            this.inventoryItemTypeNameTextbox.Margin = new System.Windows.Forms.Padding(2);
+            this.inventoryItemTypeNameTextbox.Name = "inventoryItemTypeNameTextbox";
+            this.inventoryItemTypeNameTextbox.Size = new System.Drawing.Size(297, 20);
+            this.inventoryItemTypeNameTextbox.TabIndex = 2;
             // 
             // inventoryItemType
             // 
@@ -121,7 +121,7 @@
             this.flowLayoutPanel1.Controls.Add(this.saveButton);
             this.flowLayoutPanel1.FlowDirection = System.Windows.Forms.FlowDirection.RightToLeft;
             this.flowLayoutPanel1.Location = new System.Drawing.Point(6, 59);
-            this.flowLayoutPanel1.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.flowLayoutPanel1.Margin = new System.Windows.Forms.Padding(2);
             this.flowLayoutPanel1.Name = "flowLayoutPanel1";
             this.flowLayoutPanel1.Size = new System.Drawing.Size(368, 23);
             this.flowLayoutPanel1.TabIndex = 4;
@@ -133,7 +133,7 @@
             this.ClientSize = new System.Drawing.Size(384, 84);
             this.Controls.Add(this.tableLayoutPanel1);
             this.Controls.Add(this.flowLayoutPanel1);
-            this.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.Margin = new System.Windows.Forms.Padding(2);
             this.Name = "CreateInventoryItemType";
             this.Text = "CreateInventoryItemType";
             this.tableLayoutPanel1.ResumeLayout(false);
@@ -149,8 +149,8 @@
         private System.Windows.Forms.Button saveButton;
         private System.Windows.Forms.TableLayoutPanel tableLayoutPanel1;
         private System.Windows.Forms.Label inventoryItemTypeRent;
-        private System.Windows.Forms.Label inventoryItemTypeName;
-        private System.Windows.Forms.TextBox inventoryItemName;
+        private System.Windows.Forms.Label inventoryItemTypeNameLabel;
+        private System.Windows.Forms.TextBox inventoryItemTypeNameTextbox;
         private System.Windows.Forms.ComboBox inventoryItemType;
         private System.Windows.Forms.FlowLayoutPanel flowLayoutPanel1;
     }

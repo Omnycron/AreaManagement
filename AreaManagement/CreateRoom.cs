@@ -47,6 +47,8 @@ namespace AreaManagement
             }
 
             Program.building.AddRoom(name, area, rent);
+            NavigationForm nf = (NavigationForm)Application.OpenForms["NavigationForm"];
+            nf.ReloadAllTables();
             this.Close();
         }
     }

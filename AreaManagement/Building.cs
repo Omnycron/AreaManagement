@@ -6,6 +6,10 @@ using System.Threading.Tasks;
 
 namespace AreaManagement
 {
+    /// <summary>
+    /// this class stores all data used in the application.
+    /// It is serializable in order to save the data to a file and reload them on program start
+    /// </summary>
     [Serializable]
     class Building
     {
@@ -45,6 +49,22 @@ namespace AreaManagement
         {
             InventoryItemType newItt = new InventoryItemType(name, rent);
             inventoryItemTypes.Add(newItt);
+        }
+
+        public void SetRooms(List<Room> rooms)
+        {
+            this.rooms = rooms;
+            return;
+        }
+
+        public void SetTenants(List<Tenant> tenants)
+        {
+            this.tenants = tenants;
+        }
+
+        public void SetInventoryItemTypes(List<InventoryItemType> inventoryItemTypes)
+        {
+            this.inventoryItemTypes = inventoryItemTypes;
         }
     }
 }

@@ -11,7 +11,7 @@ namespace AreaManagement
     {
         private string name;
         private int inventoryItemTypeId;
-        private string status;//defekt, beschädigt, intakt
+        private string status;
 
         public InventoryItem(string itemName, int itemType, string itemStatus)
         {
@@ -22,7 +22,16 @@ namespace AreaManagement
 
         public double GetRent()
         {
-            return Program.dataManagement.GetIventoryItemTypeById(this.inventoryItemTypeId).GetRent();
+            double rent = 0;
+            try
+            {
+                rent = Program.dataManagement.GetIventoryItemTypeById(this.inventoryItemTypeId).GetRent();
+            }
+            catch
+            {
+
+            }
+            return rent;
         }
 
         public string GetName()
@@ -38,6 +47,11 @@ namespace AreaManagement
         public string GetStatus()
         {
             return this.status;
+        }
+
+        public void SetStatus(string status)
+        {
+            this.status = status;
         }
     }
 }

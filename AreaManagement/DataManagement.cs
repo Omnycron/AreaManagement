@@ -7,12 +7,9 @@ namespace AreaManagement
 {
     class DataManagement
     {
-        static readonly string basicPath = "C:/Users/ncsot/Google Drive/Master of Science - TU Darmstadt/Skripte/IIB1/Hausübung 1/AreaManagement";
+        static readonly string basicPath = "C:/dev/Gruppe 6/Hausübung 1/AreaManagement";
         static readonly string extension = ".area";
-        static readonly string inventoryItemTypePath = basicPath+"InventoryManagement"+extension;
-        static readonly string inventoryItemPath = basicPath + "InventoryManagement" + extension;
-        static readonly string roomPath = basicPath + "Room" + extension;
-        static readonly string tenantPath = basicPath + "Tenant" + extension;
+        static readonly string buildingPath = basicPath + "Building" + extension;
 
         public InventoryItemType GetIventoryItemTypeById(int inventoryItemTypeId)
         {
@@ -28,7 +25,6 @@ namespace AreaManagement
             return result;
         }
 
-        static readonly string buildingPath = basicPath + "Building" + extension;
 
         private void Save(string filepath, object obj)
         {
@@ -58,7 +54,7 @@ namespace AreaManagement
             return (Building)Load(buildingPath);
         }
 
-        public DataTable GetRooms()
+        public DataTable GetRoomsDataTable()
         {
             DataTable dtRooms = new DataTable();
 
@@ -72,7 +68,22 @@ namespace AreaManagement
                 ReadOnly = true
             };
 
-            DataColumn cTotalRent = new DataColumn("Miete")
+            DataColumn cTenant = new DataColumn("Mieter")
+            {
+                ReadOnly = true
+            };
+
+            DataColumn cType = new DataColumn("Typ")
+            {
+                ReadOnly = true
+            };
+
+            DataColumn cTypeOfUse = new DataColumn("Nutzungsart")
+            {
+                ReadOnly = true
+            };
+
+            DataColumn cTotalRent = new DataColumn("Miete (€)")
             {
                 ReadOnly = true
             };
@@ -84,8 +95,11 @@ namespace AreaManagement
 
             dtRooms.Columns.Add(cId);
             dtRooms.Columns.Add(cName);
+            dtRooms.Columns.Add(cTenant);
+            dtRooms.Columns.Add(cType);
+            dtRooms.Columns.Add(cTypeOfUse);
             dtRooms.Columns.Add(cTotalRent);
-            dtRooms.Columns.Add(cInventoryCount);
+            dtRooms.Columns.Add(cInventoryCount);          
 
 
             double sumRent = 0;
@@ -100,19 +114,43 @@ namespace AreaManagement
                 DataRow dr = dtRooms.NewRow();
                 dr["Id"] = room.GetId();
                 dr["Name"] = room.GetName();
-                dr["Miete"] = rent;
+                try
+                {
+                    dr["Mieter"] = GetTenantById(room.GetTenantId()).GetName();
+                } catch
+                {
+
+                }
+                dr["Miete (€)"] = rent;
                 dr["gemietete Objekte"] = inventoryItemCount;
+                dr["Nutzungsart"] = room.GetTypeOfUse();
+                dr["Typ"] = room.GetRoomType();
                 dtRooms.Rows.Add(dr);
             }
 
             DataRow sumRow = dtRooms.NewRow();
             sumRow["Id"] = null;
             sumRow["Name"] = "Summe";
-            sumRow["Miete"] = sumRent;
+            sumRow["gemietete Objekte"] = null;
+            sumRow["Nutzungsart"] = null;
+            sumRow["Miete (€)"] = sumRent;
             sumRow["gemietete Objekte"] = sumInventoryItemCount;
             dtRooms.Rows.Add(sumRow);
 
             return dtRooms;
+        }
+
+        private Tenant GetTenantById(int id)
+        {
+            Tenant tenant = null;
+            foreach (Tenant r in Program.building.GetTenants())
+            {
+                if (id == r.GetId())
+                {
+                    tenant = r;
+                }
+            }
+            return tenant;
         }
 
         public Room GetRoom(int id)
@@ -140,7 +178,7 @@ namespace AreaManagement
             return;
         }
 
-        public DataTable GetInventoryItems(Room room)
+        public DataTable GetInventoryItemsDataTable(Room room)
         {
             DataTable inventoryItems = new DataTable();
 
@@ -149,39 +187,33 @@ namespace AreaManagement
             {
                 ReadOnly = true
             };
+            DataColumn cTypId = new DataColumn("TypId")
+            {
+                ReadOnly = true
+            };
             DataColumn cTotalRent = new DataColumn("Status");
-            DataColumn cInventoryCount = new DataColumn("Miete (€)")
+            DataColumn cInventoryRent = new DataColumn("Miete (€)")
             {
                 ReadOnly = true
             };
 
+
             inventoryItems.Columns.Add(cName);
             inventoryItems.Columns.Add(cTyp);
+            inventoryItems.Columns.Add(cTypId);
             inventoryItems.Columns.Add(cTotalRent);
-            inventoryItems.Columns.Add(cInventoryCount);
+            inventoryItems.Columns.Add(cInventoryRent);
 
-
-            //double sumRent = 0;
-            //double sumInventoryItemCount = 0;
             foreach (InventoryItem inventoryItem in room.GetInventory())
             {
-                //sumRent += rent;
-                //sumInventoryItemCount += inventoryItemCount;
-
                 DataRow dr = inventoryItems.NewRow();
                 dr["Name"] = inventoryItem.GetName();
                 dr["Typ"] = GetIventoryItemTypeById(inventoryItem.GetInventoryItemType()).GetName();
                 dr["Status"] = inventoryItem.GetStatus();
-                dr["Miete (€)"] = inventoryItem.GetRent(); ;
+                dr["Miete (€)"] = inventoryItem.GetRent();
+                dr["TypId"] = inventoryItem.GetInventoryItemType();
                 inventoryItems.Rows.Add(dr);
             }
-
-            //DataRow sumRow = dtRooms.NewRow();
-            //sumRow["Name"] = "Summe";
-            //sumRow["Typ"] = null;
-            //sumRow["Status"] = null;
-            //sumRow["Miete (€)"] = sumInventoryItemCount;
-            //dtRooms.Rows.Add(sumRow);
 
             return inventoryItems;
         }
@@ -205,6 +237,27 @@ namespace AreaManagement
                 dr["Name"] = itt.GetName();
                 dr["Id"] = itt.GetId();
                 dr["Miete (€)"] = itt.GetRent();
+                result.Rows.Add(dr);
+            }
+
+            return result;
+        }
+
+        public DataTable GetTenantDataTable()
+        {
+            DataTable result = new DataTable();
+
+            DataColumn cId = new DataColumn("Id");
+            DataColumn cName = new DataColumn("Name");
+
+            result.Columns.Add(cId);
+            result.Columns.Add(cName);            
+
+            foreach (Tenant tenant in Program.building.GetTenants())
+            {
+                DataRow dr = result.NewRow();
+                dr["Name"] = tenant.GetName();
+                dr["Id"] = tenant.GetId();
                 result.Rows.Add(dr);
             }
 

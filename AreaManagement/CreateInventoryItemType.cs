@@ -20,9 +20,11 @@ namespace AreaManagement
         private void saveButton_Click(object sender, EventArgs e)
         {
             double rent = Convert.ToDouble(inventoryItemType.Text);
-            string name = inventoryItemTypeName.Text;
+            string name = inventoryItemTypeNameTextbox.Text;
 
             Program.building.AddInventoryItemType(name, rent);
+            NavigationForm nf = (NavigationForm)Application.OpenForms["NavigationForm"];
+            nf.ReloadAllTables();
             this.Close();
         }
 

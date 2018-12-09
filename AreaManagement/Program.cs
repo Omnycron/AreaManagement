@@ -27,6 +27,8 @@ namespace AreaManagement
             
         }
 
+        //trys to load data from the fixed path (see class DataManagement). 
+        //If no existing data is found a new building to store data is created
         static void InitializeAreaManagement()
         {
             Program.dataManagement = new DataManagement();
@@ -40,26 +42,5 @@ namespace AreaManagement
             }
 
         }
-
-        //static void Test()
-        //{
-        //InventoryItemType itt = new InventoryItemType("a", 1, 50);
-        //InventoryItem it = new InventoryItem("asf", itt, 1, "ok");
-        //Program.building = new Building();
-        //Program.building.AddRoom("room 1", 50, 500);
-        //    building.AddTenant("tenant1");
-        //    foreach(Room room in building.GetRooms())
-        //    {
-        //        room.AddInventoryItem("inventoryItem", itt);
-        //    }
-        //    foreach (Tenant tenant in building.GetTenants())
-        //    {
-        //        tenant.RentRoom(building.GetRooms()[0]);
-        //    }
-        //    dataManagement.SaveBuilding();
-        //    Building loadedIT = dataManagement.LoadBuilding();
-        //    loadedIT.ToString();
-
-        //}
     }
 }

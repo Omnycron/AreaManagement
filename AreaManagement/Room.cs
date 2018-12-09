@@ -18,6 +18,7 @@ namespace AreaManagement
         private int numberWorkingPlaces;
         private int numberSeatingPositions;
         private double rent;
+        private int tenant;
         private List<InventoryItem> inventory;
 
         public Room(string rName, double rArea, double rRent)
@@ -86,7 +87,7 @@ namespace AreaManagement
 
         public void AddInventoryItem(string name, int type)
         {
-            InventoryItem newItem = new InventoryItem(name, type, "intakt");//TODO: Ids vortlaufend vergeben
+            InventoryItem newItem = new InventoryItem(name, type, "intakt");
             inventory.Add(newItem);
         }
 
@@ -127,6 +128,21 @@ namespace AreaManagement
         public List<InventoryItem> GetInventory()
         {
             return this.inventory;
+        }
+
+        public void SetInventory (List<InventoryItem> inventory)
+        {
+            this.inventory = inventory;
+        }
+
+        public void SetTenant(int tenant)
+        {
+            this.tenant = tenant;
+        }
+
+        public int GetTenantId()
+        {
+            return this.tenant;
         }
     }
 }

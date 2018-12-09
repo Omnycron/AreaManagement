@@ -28,6 +28,8 @@ namespace AreaManagement
             }
 
             Program.building.AddTenant(name);
+            NavigationForm nf = (NavigationForm)Application.OpenForms["NavigationForm"];
+            nf.ReloadAllTables();
             this.Close();
         }
 

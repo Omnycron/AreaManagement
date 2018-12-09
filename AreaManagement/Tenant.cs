@@ -8,27 +8,35 @@ namespace AreaManagement
     {
         private string name;
         private int id;
-        private List<Room> rooms;
 
         public Tenant(string tName)
         {
             name = tName;
-            rooms = new List<Room>();
+            id = GetNextId();
         }
 
-        public double CalculateTotalRent()
+        public string GetName()
         {
-            double totalRent = 0;
-            foreach (Room room in rooms)
+            return name;
+        }
+
+        public int GetId()
+        {
+            return id;
+        }
+
+        //calculates the next id based on existing tenants for this building
+        public int GetNextId()
+        {
+            int maxId = -1;
+            foreach (Tenant tenant in Program.building.GetTenants())
             {
-                totalRent += room.CalculateTotalRent();
+                if (tenant.id > maxId)
+                {
+                    maxId = tenant.id;
+                }
             }
-            return totalRent;
-        }
-
-        public void RentRoom(Room room)
-        {
-            rooms.Add(room);
+            return maxId + 1;
         }
     }
 }

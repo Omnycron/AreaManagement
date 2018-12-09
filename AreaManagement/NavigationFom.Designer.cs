@@ -38,14 +38,14 @@ namespace AreaManagement
             this.tabPage2 = new System.Windows.Forms.TabPage();
             this.tabControl2 = new System.Windows.Forms.TabControl();
             this.tabPage3 = new System.Windows.Forms.TabPage();
-            this.dataGridView1 = new System.Windows.Forms.DataGridView();
+            this.tenantDataGridView = new System.Windows.Forms.DataGridView();
             this.createTenant = new System.Windows.Forms.Button();
             this.tabPage4 = new System.Windows.Forms.TabPage();
             this.roomsAdminDataGridView = new System.Windows.Forms.DataGridView();
             this.createRoom = new System.Windows.Forms.Button();
             this.tabPage5 = new System.Windows.Forms.TabPage();
             this.createInventoryItemType = new System.Windows.Forms.Button();
-            this.dataGridView2 = new System.Windows.Forms.DataGridView();
+            this.inventoryItemTypeDataGridView = new System.Windows.Forms.DataGridView();
             this.button2 = new System.Windows.Forms.Button();
             this.flowLayoutPanel1.SuspendLayout();
             this.tabControl1.SuspendLayout();
@@ -54,11 +54,11 @@ namespace AreaManagement
             this.tabPage2.SuspendLayout();
             this.tabControl2.SuspendLayout();
             this.tabPage3.SuspendLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.dataGridView1)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.tenantDataGridView)).BeginInit();
             this.tabPage4.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.roomsAdminDataGridView)).BeginInit();
             this.tabPage5.SuspendLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.dataGridView2)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.inventoryItemTypeDataGridView)).BeginInit();
             this.SuspendLayout();
             // 
             // flowLayoutPanel1
@@ -146,7 +146,7 @@ namespace AreaManagement
             // 
             // tabPage3
             // 
-            this.tabPage3.Controls.Add(this.dataGridView1);
+            this.tabPage3.Controls.Add(this.tenantDataGridView);
             this.tabPage3.Controls.Add(this.createTenant);
             this.tabPage3.Location = new System.Drawing.Point(4, 22);
             this.tabPage3.Margin = new System.Windows.Forms.Padding(2);
@@ -157,18 +157,24 @@ namespace AreaManagement
             this.tabPage3.Text = "Mieter";
             this.tabPage3.UseVisualStyleBackColor = true;
             // 
-            // dataGridView1
+            // tenantDataGridView
             // 
-            this.dataGridView1.AllowUserToAddRows = false;
-            this.dataGridView1.AllowUserToDeleteRows = false;
-            this.dataGridView1.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
-            this.dataGridView1.Location = new System.Drawing.Point(2, 29);
-            this.dataGridView1.Margin = new System.Windows.Forms.Padding(2);
-            this.dataGridView1.Name = "dataGridView1";
-            this.dataGridView1.ReadOnly = true;
-            this.dataGridView1.RowTemplate.Height = 33;
-            this.dataGridView1.Size = new System.Drawing.Size(746, 332);
-            this.dataGridView1.TabIndex = 6;
+            this.tenantDataGridView.AllowUserToAddRows = false;
+            this.tenantDataGridView.AllowUserToDeleteRows = false;
+            this.tenantDataGridView.AllowUserToResizeColumns = false;
+            this.tenantDataGridView.AllowUserToResizeRows = false;
+            this.tenantDataGridView.AutoSizeColumnsMode = System.Windows.Forms.DataGridViewAutoSizeColumnsMode.Fill;
+            this.tenantDataGridView.AutoSizeRowsMode = System.Windows.Forms.DataGridViewAutoSizeRowsMode.AllCells;
+            this.tenantDataGridView.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
+            this.tenantDataGridView.Location = new System.Drawing.Point(2, 29);
+            this.tenantDataGridView.Margin = new System.Windows.Forms.Padding(2);
+            this.tenantDataGridView.Name = "tenantDataGridView";
+            this.tenantDataGridView.ReadOnly = true;
+            this.tenantDataGridView.RowHeadersVisible = false;
+            this.tenantDataGridView.RowTemplate.Height = 33;
+            this.tenantDataGridView.Size = new System.Drawing.Size(746, 332);
+            this.tenantDataGridView.TabIndex = 6;
+            this.tenantDataGridView.CellClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.tenantDataGridView_CellClick);
             // 
             // createTenant
             // 
@@ -197,13 +203,14 @@ namespace AreaManagement
             // roomsAdminDataGridView
             // 
             this.roomsAdminDataGridView.AllowUserToAddRows = false;
-            this.roomsAdminDataGridView.RowHeadersVisible = false;
             this.roomsAdminDataGridView.AutoSizeColumnsMode = System.Windows.Forms.DataGridViewAutoSizeColumnsMode.Fill;
             this.roomsAdminDataGridView.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
             this.roomsAdminDataGridView.Location = new System.Drawing.Point(6, 31);
             this.roomsAdminDataGridView.Name = "roomsAdminDataGridView";
+            this.roomsAdminDataGridView.RowHeadersVisible = false;
             this.roomsAdminDataGridView.Size = new System.Drawing.Size(740, 326);
             this.roomsAdminDataGridView.TabIndex = 5;
+            this.roomsAdminDataGridView.CellClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.roomsAdminDataGridView_CellClick);
             // 
             // createRoom
             // 
@@ -219,7 +226,7 @@ namespace AreaManagement
             // tabPage5
             // 
             this.tabPage5.Controls.Add(this.createInventoryItemType);
-            this.tabPage5.Controls.Add(this.dataGridView2);
+            this.tabPage5.Controls.Add(this.inventoryItemTypeDataGridView);
             this.tabPage5.Location = new System.Drawing.Point(4, 22);
             this.tabPage5.Margin = new System.Windows.Forms.Padding(2);
             this.tabPage5.Name = "tabPage5";
@@ -234,21 +241,30 @@ namespace AreaManagement
             this.createInventoryItemType.Location = new System.Drawing.Point(4, 4);
             this.createInventoryItemType.Margin = new System.Windows.Forms.Padding(2);
             this.createInventoryItemType.Name = "createInventoryItemType";
-            this.createInventoryItemType.Size = new System.Drawing.Size(138, 23);
+            this.createInventoryItemType.Size = new System.Drawing.Size(145, 23);
             this.createInventoryItemType.TabIndex = 1;
             this.createInventoryItemType.Text = "Einrichtungsstück anlegen";
             this.createInventoryItemType.UseVisualStyleBackColor = true;
             this.createInventoryItemType.Click += new System.EventHandler(this.createInventoryItemType_Click);
             // 
-            // dataGridView2
+            // inventoryItemTypeDataGridView
             // 
-            this.dataGridView2.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
-            this.dataGridView2.Location = new System.Drawing.Point(4, 30);
-            this.dataGridView2.Margin = new System.Windows.Forms.Padding(2);
-            this.dataGridView2.Name = "dataGridView2";
-            this.dataGridView2.RowTemplate.Height = 33;
-            this.dataGridView2.Size = new System.Drawing.Size(744, 331);
-            this.dataGridView2.TabIndex = 0;
+            this.inventoryItemTypeDataGridView.AllowUserToAddRows = false;
+            this.inventoryItemTypeDataGridView.AllowUserToDeleteRows = false;
+            this.inventoryItemTypeDataGridView.AllowUserToResizeColumns = false;
+            this.inventoryItemTypeDataGridView.AllowUserToResizeRows = false;
+            this.inventoryItemTypeDataGridView.AutoSizeColumnsMode = System.Windows.Forms.DataGridViewAutoSizeColumnsMode.Fill;
+            this.inventoryItemTypeDataGridView.AutoSizeRowsMode = System.Windows.Forms.DataGridViewAutoSizeRowsMode.AllCells;
+            this.inventoryItemTypeDataGridView.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
+            this.inventoryItemTypeDataGridView.Location = new System.Drawing.Point(4, 30);
+            this.inventoryItemTypeDataGridView.Margin = new System.Windows.Forms.Padding(2);
+            this.inventoryItemTypeDataGridView.Name = "inventoryItemTypeDataGridView";
+            this.inventoryItemTypeDataGridView.ReadOnly = true;
+            this.inventoryItemTypeDataGridView.RowHeadersVisible = false;
+            this.inventoryItemTypeDataGridView.RowTemplate.Height = 33;
+            this.inventoryItemTypeDataGridView.Size = new System.Drawing.Size(744, 331);
+            this.inventoryItemTypeDataGridView.TabIndex = 0;
+            this.inventoryItemTypeDataGridView.CellClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.inventoryItemTypeDataGridView_CellClick);
             // 
             // button2
             // 
@@ -277,11 +293,11 @@ namespace AreaManagement
             this.tabPage2.ResumeLayout(false);
             this.tabControl2.ResumeLayout(false);
             this.tabPage3.ResumeLayout(false);
-            ((System.ComponentModel.ISupportInitialize)(this.dataGridView1)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.tenantDataGridView)).EndInit();
             this.tabPage4.ResumeLayout(false);
             ((System.ComponentModel.ISupportInitialize)(this.roomsAdminDataGridView)).EndInit();
             this.tabPage5.ResumeLayout(false);
-            ((System.ComponentModel.ISupportInitialize)(this.dataGridView2)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.inventoryItemTypeDataGridView)).EndInit();
             this.ResumeLayout(false);
 
         }
@@ -301,9 +317,9 @@ namespace AreaManagement
         private TabPage tabPage4;
         private Button createRoom;
         private TabPage tabPage5;
-        private DataGridView dataGridView1;
+        private DataGridView tenantDataGridView;
         private Button createInventoryItemType;
-        private DataGridView dataGridView2;
+        private DataGridView inventoryItemTypeDataGridView;
         private DataGridView roomsAdminDataGridView;
     }
 }
